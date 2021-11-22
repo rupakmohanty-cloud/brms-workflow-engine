@@ -1,0 +1,78 @@
+plugins {
+    id 'org.springframework.boot' version '2.4.4'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+   // id 'java'
+}
+
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+
+group = 'com.vanderbilt.ruleengine'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+/*repositories {
+    mavenCentral()
+}*/
+repositories {
+    mavenLocal()
+    maven {
+        url = uri('https://repo.maven.apache.org/maven2/')
+    }
+}
+
+dependencies {
+    implementation 'org.postgresql:postgresql:9.4-1206-jdbc42'
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+    implementation 'junit:junit:4.12'
+    implementation 'com.google.guava:guava:21.0'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.0.5.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.0.5.RELEASE'
+    implementation 'com.typesafe:config:1.2.1'
+    implementation 'org.mvel:mvel2:2.4.4.Final'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.0.5.RELEASE'
+    testImplementation 'org.springframework.security:spring-security-test:5.0.8.RELEASE'
+}
+
+
+/*dependencies {
+    implementation 'org.postgresql:postgresql:9.4-1206-jdbc42'
+    compileOnly 'org.projectlombok:lombok:1.18.20'
+    annotationProcessor 'org.projectlombok:lombok:1.18.20'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.20'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
+    implementation 'junit:junit:4.12'
+    implementation 'com.google.guava:guava:21.0'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.0.5.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.0.5.RELEASE'
+    implementation 'com.typesafe:config:1.2.1'
+    implementation 'org.mvel:mvel2:2.4.4.Final'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:2.0.5.RELEASE'
+    testImplementation 'org.springframework.security:spring-security-test:5.0.8.RELEASE'
+
+}*/
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from(components.java)
+        }
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+
+/*test {
+    useJUnitPlatform()
+}*/
