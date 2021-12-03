@@ -1,0 +1,93 @@
+{
+	"info": {
+		"_postman_id": "e8061c3f-550e-440a-937a-b3f7c655b14d",
+		"name": "AWSDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllRules",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-3-82-136-241.compute-1.amazonaws.com:8080/get-all-rules",
+					"protocol": "http",
+					"host": [
+						"ec2-3-82-136-241",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"get-all-rules"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loanRule",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"firstName\": \"Rupak\",\n \"lastName\": \"Mohanty\",\n \"sex\": \"M\",\n \"age\": \"31\",\n \"accountNumber\": \"123456789\",\n \"bank\": \"ABC BANK\",\n \"requestedLoanAmount\": 1100000.0,\n \"monthlySalary\": 90000.0,\n \"creditScore\": 800,\n \"ssn\": \"xxx-xx-xxxx\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-82-136-241.compute-1.amazonaws.com:8080/loan",
+					"protocol": "http",
+					"host": [
+						"ec2-3-82-136-241",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"loan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateRule",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"ruleId\": 1,\n \"salaryOperator\": \">=\",\n \"creditScoreOperator\": \">=\",\n \"loanAmountOperator\": \"<\",\n \"requestedLoanAmount\": 150000.0,\n \"monthlySalary\": 50000.0,\n \"creditScore\":500\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ec2-3-82-136-241.compute-1.amazonaws.com:8080/updateRule",
+					"protocol": "http",
+					"host": [
+						"ec2-3-82-136-241",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						"updateRule"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

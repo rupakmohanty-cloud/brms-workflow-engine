@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "61ed3f18-c1ca-4123-9a6a-d5814f1c48c1",
+		"name": "SoftwareEngDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllRules",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/get-all-rules",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"get-all-rules"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "loanRule",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \n \"firstName\": \"Rupak\",\n \"lastName\": \"Mohanty\",\n \"sex\": \"M\",\n \"age\": \"25\",\n \"accountNumber\": \"123456789\",\n \"bank\": \"ABC BANK\",\n \"requestedLoanAmount\": 1100000.0,\n \"monthlySalary\": 70000.0,\n \"creditScore\": 800,\n \"ssn\": \"xxx-xx-xxxx\"\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/loan",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"loan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteRule",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/deleterule/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"deleterule",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateRule",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"ruleId\": 1,\n \"salaryOperator\": \"<\",\n \"creditScoreOperator\": \"<=\",\n \"loanAmountOperator\": \">=\",\n \"requestedLoanAmount\": 1100000.0,\n \"monthlySalary\": 90000.0,\n \"creditScore\": 800\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/updateRule",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"updateRule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllRules",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://ec2-3-95-208-72.compute-1.amazonaws.com:8080/",
+					"protocol": "http",
+					"host": [
+						"ec2-3-95-208-72",
+						"compute-1",
+						"amazonaws",
+						"com"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
